@@ -30,7 +30,17 @@ public class Policy {
 
     /**
      * Constructor that accepts arguments
+     *
+     * @param policyNumber policy number
+     * @param providerName  provider/insurer name
+     * @param firstName     policyholder first name
+     * @param lastName      policyholder last name
+     * @param age           policyholder age in years
+     * @param smokingStatus "smoker" or "non-smoker"
+     * @param height        policyholder height in inches
+     * @param weight        policyholder weight in pounds
      */
+    
     public Policy(int policyNumber, String providerName, String firstName, String lastName,
                   int age, String smokingStatus, double height, double weight) {
         this.policyNumber = policyNumber;
@@ -43,38 +53,80 @@ public class Policy {
         this.weight = weight;
     }
 
-    //  Getters (Accessors) 
+    //  Getters (Accessors)
+     
+    
+    // @return the policy number
     public int getPolicyNumber() { return policyNumber; }
+    
+    
+    // @return the provider name
     public String getProviderName() { return providerName; }
+   
+     
+    //@return the policyholder first name
     public String getFirstName() { return firstName; }
+  
+    
+    //@return the policyholder last name
     public String getLastName() { return lastName; }
+    
+    
+    //@return the policyholder age (years)
     public int getAge() { return age; }
+    
+    // @return the smoking status ("smoker" or "non-smoker")
     public String getSmokingStatus() { return smokingStatus; }
+    
+    
+    // @return the height (inches)
     public double getHeight() { return height; }
+    
+    
+    //@return the weight (pounds)
     public double getWeight() { return weight; }
 
     //  Setters (Mutators) 
+    
+    
+    //@param policyNumber new policy number
     public void setPolicyNumber(int policyNumber) { this.policyNumber = policyNumber; }
+    
+    //@param providerName new provider name
     public void setProviderName(String providerName) { this.providerName = providerName; }
+    
+    //@param firstName new first name
     public void setFirstName(String firstName) { this.firstName = firstName; }
+    
+    //@param lastName new last name
     public void setLastName(String lastName) { this.lastName = lastName; }
+    
+    //@param age new age (years)
     public void setAge(int age) { this.age = age; }
+    
+    //@param smokingStatus new smoking status ("smoker" or "non-smoker")
     public void setSmokingStatus(String smokingStatus) { this.smokingStatus = smokingStatus; }
+    
+    //@param height new height (inches)
     public void setHeight(double height) { this.height = height; }
+    
+    //@param weight new weight (pounds)
     public void setWeight(double weight) { this.weight = weight; }
 
     /**
      * Calculates the BMI of the policyholder.
      * Formula: BMI = (Weight * 703) / (Height^2)
+     @return BMI value; 0.0 if height is not positive
      */
     public double calculateBMI() {
-        if (height <= 0) return 0;
+        if (height <= 0) return 0.0;
         return (weight * 703) / (height * height);
     }
 
     /**
      * Calculates the total policy price.
      * Avoids stale data.
+     * @return total policy price
      */
     public double calculatePolicyPrice() {
         double baseFee = 600.0;
@@ -98,6 +150,7 @@ public class Policy {
 
     /**
      * Returns a formatted String representing the policy.
+     * @return formatted details string
      */
     @Override
     public String toString() {
