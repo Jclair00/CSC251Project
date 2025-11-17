@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Reads policy records from PolicyInformation.txt (8 lines per policy),
  * stores them in an ArrayList, prints each policy, and reports smoker counts.
  */
-public class Project_jamal_clair.java {
+public class Project_jamal_clair {
 
     public static void main(String[] args) {
         final String FILE_NAME = "PolicyInformation.txt";
