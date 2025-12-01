@@ -35,7 +35,7 @@ public class Policy {
          policyHolder.getWeight()
          );
          
-         policyCount==;
+         policyCount++;
    }
 
    //  Getters (Accessors) 
